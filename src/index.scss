@@ -1,0 +1,428 @@
+
+$primary-team-color : rgb(198, 241, 119);
+$secondary-team-color : rgb(255, 255, 255);
+$third-team-color : rgb(2, 110, 2);
+$black-team-color : rgb(0, 0, 0);
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #ebeeee;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65,0,.076,1)) {
+  transition: $property $duration $ease;
+}
+.button{
+  position: absolute;
+  top: 89%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media only screen and (max-width: 1300px) {
+  .button{
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .button{
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .button{
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .button{
+    position: absolute;
+    top: 69%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .button{
+    position: absolute;
+    top: 59%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .button{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
+
+
+
+* {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+
+body {
+  font-family: 'Mukta', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: $bg;
+}
+
+button {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  &.learn-more {
+    width: 12rem;
+    height: auto;
+    .circle {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: relative;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: $third-team-color;
+      border-radius: 1.725rem;
+      .icon {
+        @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background: $primary-team-color;
+        &.arrow {
+          @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+          left: 0.625rem;
+          width: 1.125rem;
+          height: 0.125rem;
+          background: none;
+          &::before {
+            position: absolute;
+            content: '';
+            top: -0.25rem;
+            right: 0.0625rem;
+            width: 0.625rem;
+            height: 0.625rem;
+            border-top: 0.125rem solid #fff;
+            border-right: 0.125rem solid #fff;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+    .button-text {
+      @include transition(all, 0.45s, cubic-bezier(0.65,0,.076,1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 0.75rem 0;
+      margin: 0 0 0 1.85rem;
+      color: $primary-team-color;
+      font-weight: 700;
+      line-height: 1.6;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+  &:hover {
+    .circle {
+      width: 100%;
+      .icon {
+        &.arrow {
+        background: $secondary-team-color;
+        transform: translate(1rem, 0);
+        }
+      }
+    }
+    .button-text {
+      color: $secondary-team-color;
+    }
+  }
+}
+
+.header{
+  min-height: 100%;
+  min-width: 100%;
+  z-index:2;
+  padding-top: 3%; 
+  background-color: $black;
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+.footer{
+  background-color: black;
+  display: -webkit-box; 
+
+  
+}
+
+.header{
+  min-height: 100%;
+  min-width: 100%;
+  z-index:2;
+  padding-top: 3%; 
+}
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  z-index:2;
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  padding-bottom: 10%
+  
+  
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    z-index:2;
+    display: block;
+    margin-left:auto; 
+    margin-right:auto;
+  }
+}
+
+.twitter {
+
+  min-width: 400px;
+  min-height: 400px;
+  padding: 1%;
+  display: table-cell;
+}
+
+.youtube{
+  min-width: 100%;
+  min-height: 100%;
+
+}
+iframe{
+  min-width: 400px;
+  min-height: 400px;
+  padding: 1%;
+  display: table-cell;
+  
+
+}
+
+  .media{
+    min-height: 100%;
+    min-width: 100%;
+    font-size: 20px;
+    padding-top: 3%; 
+  }
+  h1{
+    text-align: center;
+  }
+  .navbar{
+    overflow: hidden;
+    position: fixed;
+    z-index:1;
+    top: 0%;  
+    
+  }
+  
+  ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $secondary-team-color;
+    list-style-type: none;
+  }
+  .overwatchLogo{
+    max-width: 5%;
+    max-height: 5%;
+    margin: 0%;
+    border: 0ch;
+    padding: 0%;
+    float: right;
+  }
+  
+  .overwatchLogo img {
+    max-width: 25%;
+    max-height: 25%;
+    margin: 0%;
+    border: 0ch;
+    padding: 0%;
+  
+  }
+  
+  li {
+    float: left;
+    font-size: 100%
+  }
+  
+  li a {
+    display: block;
+    color: $third-team-color;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: $primary-team-color;
+  }
+  .roster{
+    background-color: $third-team-color;
+    color: $secondary-team-color;
+    text-align: center;
+    z-index:2;
+    padding-top: 3%; 
+  }
+  
+  h2 {  
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 36px;
+    letter-spacing: 2px;
+    word-spacing: 0%;
+    color: whitesmoke;
+    font-weight: 700;
+    text-decoration: none;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: capitalize;
+    text-shadow: 0 1px 0 black,
+    0 2px 0 black,
+    0 3px 0 black,
+    0 4px 0 black,
+    0 5px 0 black,
+    0 6px 1px rgba(0,0,0,.1),
+    0 0 5px rgba(0,0,0,.1),
+    0 1px 3px rgba(0,0,0,.3),
+    0 3px 5px rgba(0,0,0,.2),
+    0 5px 10px rgba(0,0,0,.25),
+    0 10px 10px rgba(0,0,0,.2),
+    0 20px 20px rgba(0,0,0,.15);
+    ;
+    bottom: 50%;
+  }
+  .players-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: $black-team-color;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .players-container > * {
+    flex: 3; 
+    flex-basis: 350px;
+    border: 0px solid rgb(14, 27, 14); 
+    overflow: hidden;
+    background-color: $black-team-color;
+  }
+  
+ 
+  .players-overlay {
+    position: relative;
+    text-align: center;
+  }
+  
+
+  
+  .players h1{
+    font-size: 22px;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: white;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+  }
+  .players p {
+    color:white;
+    font-size: 15px;
+  }
+  #about{
+    margin-left: auto;
+    margin-right: auto;
+    width: 25em;
+    text-align: center;
+    z-index:2;
+    padding-top: 3%; 
+    margin-top: -3%;
+}
