@@ -11,7 +11,6 @@ import Button from '../button/Button'
 
 
 class App extends Component {
-  c
   render() {
     return (
         <div className="App"> 
